@@ -48,6 +48,11 @@ class BanxicoService
 
         $latestExchange = end($exchanges);
 
+        $latestExchange['last_updated'] = Carbon::createFromFormat('d/m/Y', $latestExchange['fecha']);
+        $latestExchange['value'] = (double) $latestExchange['dato'];
+
+        unset($latestExchange['fecha'], $latestExchange['dato']);
+
         return $latestExchange;
     }
 }
