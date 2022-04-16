@@ -15,13 +15,13 @@ class ExchangeController extends Controller
     {
         return rescue(function () {
             $fixerio = new FixerService;
-            $fixerExchange = $fixerio->getLatestExchange();
+            $fixerExchange = $fixerio->getLatestExchangeRate();
 
             $banxico = new BanxicoService;
-            $banxicoExchange = $banxico->getLatestExchange();
+            $banxicoExchange = $banxico->getLatestExchangeRate();
 
             $dof = new DiarioOficialService;
-            $dofExchangeRate = $dof->getLatestExchange();
+            $dofExchangeRate = $dof->getLatestExchangeRate();
 
             return response([
                 'message' => 'Exchanges rates from 3 different sources',

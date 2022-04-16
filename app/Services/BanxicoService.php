@@ -5,7 +5,6 @@ namespace App\Services;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 
-
 class BanxicoService
 {
     private $client;
@@ -32,7 +31,7 @@ class BanxicoService
      * Get the latest exchange rate from Banxico API
      * @return array|string
      */
-    public function getLatestExchange(): mixed
+    public function getLatestExchangeRate(): mixed
     {
         $exchanges = [];
         $response = $this->client->get($this->url)->throw();
@@ -49,7 +48,7 @@ class BanxicoService
         $latestExchange = end($exchanges);
 
         $latestExchange['last_updated'] = Carbon::createFromFormat('d/m/Y', $latestExchange['fecha']);
-        $latestExchange['value'] = (double) $latestExchange['dato'];
+        $latestExchange['value'] = (float) $latestExchange['dato'];
 
         unset($latestExchange['fecha'], $latestExchange['dato']);
 

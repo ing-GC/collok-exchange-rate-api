@@ -17,7 +17,7 @@ class FixerService
      * Return the latest exchenge rate from Fixer.io
      * @return array
      */
-    public function getLatestExchange(): array
+    public function getLatestExchangeRate(): array
     {
         $response = $this->client->latest([
             'base' => 'EUR',

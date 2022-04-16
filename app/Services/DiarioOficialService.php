@@ -22,7 +22,7 @@ class DiarioOficialService
         $this->url = "http://www.dof.gob.mx/indicadores_detalle.php?cod_tipo_indicador=158&dfecha={$this->startWeek}&hfecha={$this->today}";
     }
 
-    public function getLatestExchange()
+    public function getLatestExchangeRate()
     {
         $crawler = $this->client->request('GET', $this->url);
         $rates = $crawler->filter('.Celda')->each(function ($rates) {
@@ -31,7 +31,7 @@ class DiarioOficialService
 
             $arrayRates = [
                 'last_updated' => Carbon::createFromFormat('d-m-Y', $tdDate->html()),
-                'value' => (double) $tdRate->html(),
+                'value' => (float) $tdRate->html(),
             ];
 
             return $arrayRates;
