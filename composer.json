@@ -10,7 +10,9 @@
         "laravel/framework": "^9.2",
         "laravel/passport": "^10.4",
         "laravel/sanctum": "^2.14.1",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "ranium/fixerio-php-client": "^1.2",
+        "ricorocks-digital-agency/soap": "^1.6"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
