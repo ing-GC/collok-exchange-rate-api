@@ -51,12 +51,15 @@ php artisan test
 All request need the Accept: application/json header.
 
 - Register endpoint
-<img src="public/img/register.png"/>
-
+<p>
+<img src="public/img/register.PNG"/>
+</p>
+<p>
 - Login endpoint
-<img src="public/img/login.png"/>
-
+<img src="public/img/login.PNG"/>
+<p>
+</p>
 - Exchanges rates endpoint
-<img src="public/img/exchanges_rates.png"/>
-
+<img src="public/img/exchanges_rates.PNG"/>
+</p>
 *Note. The provider_1 (fixer.io) only permit with the free account exchange with EUR.
