@@ -45,3 +45,18 @@ Run
 mkdir tests/Unit
 php artisan test
 ```
+
+##Manual Test
+
+All request need the Accept: application/json header.
+
+- Register endpoint
+<img src="public/img/register.png"/>
+
+- Login endpoint
+<img src="public/img/login.png"/>
+
+- Exchanges rates endpoint
+<img src="public/img/exchanges_rates.png"/>
+
+*Note. The provider_1 (fixer.io) only permit with the free account exchange with EUR.
