@@ -21,8 +21,8 @@ class BanxicoService
             'Accept' => 'application/xml',
         ]);
 
-        $this->startWeek = Carbon::now()->startOfWeek()->toDateString();
-        $this->endWeek = Carbon::now()->endOfWeek()->toDateString();
+        $this->startWeek = Carbon::now()->startOfMonth()->toDateString();
+        $this->endWeek = Carbon::now()->toDateString();
 
         $this->url = "https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF43718/datos/{$this->startWeek}/{$this->endWeek}";
     }

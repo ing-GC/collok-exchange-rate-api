@@ -16,7 +16,7 @@ class DiarioOficialService
     {
         $this->client = new Client();
 
-        $this->startWeek = Carbon::now()->startOfWeek()->format('d/m/Y');
+        $this->startWeek = Carbon::now()->startOfMonth()->format('d/m/Y');
         $this->today = Carbon::now()->format('d/m/Y');
 
         $this->url = "http://www.dof.gob.mx/indicadores_detalle.php?cod_tipo_indicador=158&dfecha={$this->startWeek}&hfecha={$this->today}";
